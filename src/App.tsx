@@ -1,7 +1,8 @@
 import { useState } from "react"
 import { CategoryPills } from "./components/CategoryPills"
 import { PageHeader } from "./components/PageHeader"
-import { categories } from "./data/home"
+import { categories, videos } from "./data/home"
+import { VideoGridItem } from "./components/VideoGridItem"
 function App() {
   const [selectedCategry, setSelectedCategory] = useState(categories[0])
   return <div className="max-h-screen flex flex-col">
@@ -14,7 +15,18 @@ function App() {
           <CategoryPills categories={categories}
           selectedCategory={selectedCategry} onSelect={setSelectedCategory} />
         </div>
+        <div className="grid gap-4" 
+        style={{ gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))'
+
+        }}>
+        {videos.map(video => (
+          <VideoGridItem key={video.id} {...video}/>
+        ))}
+
+
+        </div>
       </div>
+
     </div>
   </div>
 }
