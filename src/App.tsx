@@ -3,15 +3,19 @@ import { CategoryPills } from "./components/CategoryPills"
 import { PageHeader } from "./components/PageHeader"
 import { categories, videos } from "./data/home"
 import { VideoGridItem } from "./components/VideoGridItem"
+import { SideBar } from "./components/SideBar"
+import { SidebarProvider } from "./contexts/SidebarContext"
 function App() {
   const [selectedCategry, setSelectedCategory] = useState(categories[0])
-  return <div className="max-h-screen flex flex-col">
+  return (
+  <SidebarProvider>
+  <div className="max-h-screen flex flex-col w-full">
     <PageHeader/>
-    <div className="grid  flex-grow-1 overflow-auto" 
+    <div className="grid flex-grow-1 overflow-auto" 
     style={{'gridTemplateColumns': 'auto 1fr'}}>
-      <div>Sidebar</div>
+      <SideBar />
       <div className="overflow-x-hidden px-8 pb-4">
-        <div className="sticky top-0 bg-white-500 z-10 pb-4">
+        <div className="sticky top-0 bg-white z-10 pb-4">
           <CategoryPills categories={categories}
           selectedCategory={selectedCategry} onSelect={setSelectedCategory} />
         </div>
@@ -29,6 +33,7 @@ function App() {
 
     </div>
   </div>
-}
+  </SidebarProvider>
+)}
 
 export default App
