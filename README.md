@@ -1,69 +1,56 @@
-# React + TypeScript + Vite
+# YouTube Home Page Clone
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This simple web page showcases the knowledge I acquired while learning **React** and **Tailwind CSS**. It represents one of my first projects built with React, with a focus on component-based development and responsive design.
 
-Currently, two official plugins are available:
+All resources and layout ideas were inspired by a YouTube tutorial from **Web Dev Simplified**, used as a learning challenge.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📸 Preview
 
-## Expanding the ESLint configuration
+Here are some screenshots of the project:
+![Desktop](public/screenshots/YT-desktop.png)
+![Tablet](public/screenshots/YT-tablet.png)
+![Tablet-Active sidebar](public/screenshots/YT-tablet-sidebar.png)
+![Mobile](public/screenshots/YT-mobile.png)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🚀 Features
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- Responsive layout that adapts to mobile, tablet, and desktop screens
+- Custom **Button** component for consistent button styling
+- Custom **VideoGridItem** component to display each video card
+- Sidebar that changes its layout dynamically based on screen size, managed using **React Context**
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+## 🛠️ Technologies Used
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- React
+- Tailwind CSS
+- React Context API
+
+## 📦 Installation
+
+To run this project locally, follow the steps below:
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/your-username/youtube-home-clone.git
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 2. Navigate into the project folder
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+cd youtube-home-clone
 ```
+
+### 3. Install dependencies
+
+```bash
+npm install
+```
+
+### 4. Start the development server
+
+```bash
+npm run dev
+```
+
+Make sure you have Node.js and npm installed.
